@@ -40,6 +40,6 @@ function deleteEvent(events, id) {
   if (indexToDelete !== null) {
     events.splice(indexToDelete, 1);
   } else {
-    console.log("Task is not found")
+    console.log("Event is not found")
   }
 }

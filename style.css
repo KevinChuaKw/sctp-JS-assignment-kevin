@@ -5,4 +5,6 @@
 
 div.day-group{
     background-color: aqua;
+    padding: 50px;
+    margin-top: 50px;
 }

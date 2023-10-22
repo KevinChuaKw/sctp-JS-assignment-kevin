@@ -1,24 +1,22 @@
-// // the 'DOMContentLoaded' events fires when all the 
-// // HTML elements in the webpage has been created
-// // We use it to define the entry point of our application
+document.addEventListener("DOMContentLoaded",function(){
+    function main(){
+        let events = [];
+        // renderTodos(events); 
 
-// document.addEventListener("DOMContentLoaded",function(){
-//     function main(){
-//         let todos = [];
-//         renderTodos(todos); 
+        document.querySelector("#submit-event").addEventListener("click", function(event){
+            event.preventDefault(); // this is specificly if we are using the 'form' in HTML
+            const eventDayElement = document.querySelector(".day:checked")
+            const eventDay = eventDayElement.value;
+            const eventTimingElement = document.querySelector(".time:checked")
+            const eventTiming = eventTimingElement.value;
+            const eventNameElement = document.querySelector("#eventName")
+            const eventName = eventNameElement.value;
 
-//         // attach all the event listeners here
-//         document.querySelector("#submit-todo").addEventListener("click", function(event){
-//             event.preventDefault(); // this is specificly if we are using the 'form' in HTML
-//             const taskNameElement = document.querySelector("#taskName");
-//             const taskName = taskNameElement.value;
-//             const taskUrgencyElement = document.querySelector("#taskUrgency"); 
-//             const taskUrgency = taskUrgencyElement.value;
-
-//             addTodo(todos, taskName, taskUrgency); 
-//             renderTodos(todos); // to redraw the list of tasks
-//         })
-//     }
+            addEvent(events, eventDay, eventTiming, eventName);
+            console.log(events); 
+            // renderTodos(todos); // to redraw the list of tasks
+        })
+    }
 
 //     function renderTodos(todos){
 //         const todoListElement = document.querySelector("#todoList");
@@ -60,6 +58,6 @@
 //         }
 //     }
 
-//     main(); 
-// })
+    main(); 
+})
 

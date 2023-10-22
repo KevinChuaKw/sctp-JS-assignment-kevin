@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <h1 id="main-title">Event Schedule</h1>
+
+        <form id ="todoForm">
+          <div>
+            <label>
+              Which day of the week is the event?
+            </label>
+            <div>
+              <input type="radio" name="day" class="day ms-2 me-2"
+              value="monday" checked><label>Monday</label>
+              <input type="radio" name="day" class="day ms-2 me-2"
+              value="tuesday"><label>Tuesday</label>
+              <input type="radio" name="day" class="day ms-2 me-2"
+              value="wednesday"><label>Wednesday</label>
+              <input type="radio" name="day" class="day ms-2 me-2"
+              value="thursday"><label>Thursday</label>
+              <input type="radio" name="day" class="day ms-2 me-2"
+              value="friday"><label>Friday</label>
+            </div>
+            <label>
+              Which time of the day is the event?
+            </label>
+            <div>
+              <input type="radio" name="time" class="time ms-2 me-2"
+              value="10am-to-12pm" checked><label>10am to 12pm</label>
+              <input type="radio" name="time" class="time ms-2 me-2"
+              value="12pm-to-2pm"><label>12pm to 2pm</label>
+              <input type="radio" name="time" class="time ms-2 me-2"
+              value="2pm-to-4pm"><label>2pm to 4pm</label> 
+            </div>
+            <div id="task-name">
+              <label>Event Name:</label>
+              <input type = "text" id = "taskName" class = "form-control">
+            </div>    
+            <input type="submit" id="submit-todo" class="submit-btn mt-3" value="Add New Todo"/>
+        </form>
+
+        <div id="monday" class="monday">Monday</div>
+        <ul id="todoList" class="list-group mt-3"></ul>
+        <div id="tuesday" class="tuesday">Tuesday</div>
+        <ul id="todoList" class="list-group mt-3"></ul>
+        <div id="wednesday" class="Wednesday">Wednesday</div>
+        <ul id="todoList" class="list-group mt-3"></ul>
+        <div id="thursday" class="thurday">Thursday</div>
+        <ul id="todoList" class="list-group mt-3"></ul>
+        <div id="firday" class="friday">Friday</div>
+        <ul id="todoList" class="list-group mt-3"></ul>
+    </div>
+    <!-- The order is important -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

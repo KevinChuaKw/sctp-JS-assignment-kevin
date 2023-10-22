@@ -1,41 +1,44 @@
 let events = [];
 
-function addTodo(todos, name, urgency) {
-  let newTodo = {
+function addEvent(events, day, timing, name) {
+  let newEvent = {
     id: Math.floor(Math.random() * 100 + 1),
-    name: name,
-    urgency: urgency
+    day: day,
+    timing: timing,
+    name: name
   };
-  todos.push(newTodo);
+  events.push(newEvent);
+  return events;
 }
 
-function modifyTask(todos, id, newName, newUrgency) {
+function modifyEvent(events, id, newDay, newTiming, newName) {
 
-  let modifiedTask = {
+  let modifiedEvent = {
     "id": id,
+    "day": newDay, 
+    "timing": newTiming,
     "name": newName,
-    "urgency": newUrgency
   }
 
-  const indexToReplace = todos.findIndex(function(t) {
-    return t.id == id;
+  const indexToReplace = events.findIndex(function(e) {
+    return e.id == id;
   });
 
   if (indexToReplace > -1) {
-    todos[indexToReplace] = modifiedTask;
+    events[indexToReplace] = modifiedEvent;
   }
 }
 
-function deleteTask(todos, id) {
+function deleteEvent(events, id) {
   let indexToDelete = null;
-  for (let index = 0; index < todos.length; index++)
-    if (todos[index].id == id) {
+  for (let index = 0; index < events.length; index++)
+    if (events[index].id == id) {
       indexToDelete = index;
       break;
     }
 
   if (indexToDelete !== null) {
-    todos.splice(indexToDelete, 1);
+    events.splice(indexToDelete, 1);
   } else {
     console.log("Task is not found")
   }

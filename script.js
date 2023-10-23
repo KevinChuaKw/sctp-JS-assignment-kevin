@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const eventName = eventNameElement.value;
   
         addEvent(events, eventDay, eventTiming, eventName);
-        console.log(events);
         renderEvents(events, eventDay); // Render the events for the specific day
       });
     }

@@ -36,11 +36,11 @@
               Which time of the day is the event?
             </label>
             <div>
-              <input type="checkbox" name="time" class="time ms-2 me-2"
+              <input type="radio" name="time" class="time ms-2 me-2"
               value="10am-to-12pm" checked><label>10am to 12pm</label>
-              <input type="checkbox" name="time" class="time ms-2 me-2"
+              <input type="radio" name="time" class="time ms-2 me-2"
               value="12pm-to-2pm"><label>12pm to 2pm</label>
-              <input type="checkbox" name="time" class="time ms-2 me-2"
+              <input type="radio" name="time" class="time ms-2 me-2"
               value="2pm-to-4pm"><label>2pm to 4pm</label> 
             </div>
             <div id="event-name">
@@ -52,16 +52,20 @@
 
         <div></div>
 
-        <div id="monday" class="monday day-group">Monday</div>
-        <ul id="todoList" class="day-group mt-3"></ul>
-        <div id="tuesday" class="tuesday day-group">Tuesday</div>
-        <ul id="todoList" class="day-group mt-3"></ul>
-        <div id="wednesday" class="Wednesday day-group">Wednesday</div>
-        <ul id="todoList" class="day-group mt-3"></ul>
-        <div id="thursday" class="thurday day-group">Thursday</div>
-        <ul id="todoList" class="day-group mt-3"></ul>
-        <div id="firday" class="friday day-group">Friday</div>
-        <ul id="todoList" class="day-group mt-3"></ul>
+        <div id="monday" class="day-group">Monday</div>
+        <ul id="mondayEventList" class="day-group mt-3"></ul>
+        
+        <div id="tuesday" class="day-group">Tuesday</div>
+        <ul id="tuesdayEventList" class="day-group mt-3"></ul>
+        
+        <div id="wednesday" class="day-group">Wednesday</div>
+        <ul id="wednesdayEventList" class="day-group mt-3"></ul>
+        
+        <div id="thursday" class="day-group">Thursday</div>
+        <ul id="thursdayEventList" class="day-group mt-3"></ul>
+        
+        <div id="friday" class="day-group">Friday</div>
+        <ul id="fridayEventList" class="day-group mt-3"></ul>
     </div>
     <!-- The order is important -->
     <script src="data.js"></script>

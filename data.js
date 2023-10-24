@@ -1,4 +1,21 @@
+const BASE_JSON_BIN_URL = "https://api.jsonbin.io/v3";
+const BIN_ID = "6537fb920574da7622bd212d";
+const MASTER_KEY="$2a$10$MwbCjhDZkgj8pfP64d1CKONqFAPDJeiHa0nZEcJrcvVpklRDjrug6"; 
+
 let events = [];
+
+async function loadEvents(events){
+  const eventResponse = await axios.get(`${BASE_JSON_BIN_URL}/b/${BIN_ID}/latest`);
+  console.log(eventResponse.data);
+  return response.data.record; 
+}
+
+async function saveEvents(events, eventDay){
+  const response = await axios.put(`${BASE_JSON_BIN_URL}/b/${BIN_ID}`, events, {
+    "content-type":"application/json",
+    "X-Master-Key": MASTER_KEY
+  })
+}
 
 function addEvent(events, day, timing, name) {
   let newEvent = {

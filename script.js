@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function main() {
-      let events = [];
+    async function main() {
+      let events = await loadEvents();
+      renderEvents(events, eventDay); 
   
       document.querySelector("#submit-event").addEventListener("click", function (event) {
         event.preventDefault(); // This prevents form submission if you are using a form
@@ -15,6 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         addEvent(events, eventDay, eventTiming, eventName);
         renderEvents(events, eventDay); // Render the events for the specific day
       });
+
+      document.querySelector("#save-btn").addEventListener("click", async function(){
+        await saveEvents(events);
+        alert ("Events have been saved"); 
+      }); 
     }
   
     function renderEvents(events, eventDay) {

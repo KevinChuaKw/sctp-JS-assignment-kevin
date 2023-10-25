@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     async function main() {
       let events = await loadEvents();
-      let eventDay; 
-      renderEvents(events, eventDay); 
+      renderEvents(events, "monday"); 
+      renderEvents(events, "tuesday");
+      renderEvents(events, "wednesday"); 
+      renderEvents(events, "thursday"); 
+      renderEvents(events, "friday");  
   
       document.querySelector("#submit-event").addEventListener("click", function (event) {
         event.preventDefault(); // This prevents form submission if you are using a form

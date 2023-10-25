@@ -7,7 +7,7 @@ let events = [];
 async function loadEvents(events){
   const eventResponse = await axios.get(`${BASE_JSON_BIN_URL}/b/${BIN_ID}/latest`);
   console.log(eventResponse.data);
-  return response.data.record; 
+  return eventResponse.data.record; 
 }
 
 async function saveEvents(events, eventDay){

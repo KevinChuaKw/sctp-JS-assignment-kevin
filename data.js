@@ -4,7 +4,7 @@ const MASTER_KEY="$2a$10$MwbCjhDZkgj8pfP64d1CKONqFAPDJeiHa0nZEcJrcvVpklRDjrug6";
 
 let events = [];
 
-async function loadEvents(events){
+async function loadEvents(){
   const eventResponse = await axios.get(`${BASE_JSON_BIN_URL}/b/${BIN_ID}/latest`);
   console.log(eventResponse.data);
   return eventResponse.data.record; 

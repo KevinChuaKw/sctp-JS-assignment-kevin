@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     async function main() {
       let events = await loadEvents();
+      let eventDay; 
       renderEvents(events, eventDay); 
   
       document.querySelector("#submit-event").addEventListener("click", function (event) {
         event.preventDefault(); // This prevents form submission if you are using a form
   
         const eventDayElement = document.querySelector(".day:checked");
+        eventDay = eventDayElement.value; 
         const eventDay = eventDayElement.value;
         const eventTimingElement = document.querySelector(".time:checked");
         const eventTiming = eventTimingElement.value;
@@ -67,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
       
             listItem.querySelector(".completed-btn").addEventListener("click", function () {
-              // Handle the event completion logic here
+              listItem.style.backgroundColor = "green";
+              renderEvents(events, eventDay); 
             });
       
             // Append the created list item to the event list for the specific day

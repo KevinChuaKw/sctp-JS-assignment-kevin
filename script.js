@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // This prevents form submission if you are using a form
   
         const eventDayElement = document.querySelector(".day:checked");
-        eventDay = eventDayElement.value; 
         const eventDay = eventDayElement.value;
         const eventTimingElement = document.querySelector(".time:checked");
         const eventTiming = eventTimingElement.value;
